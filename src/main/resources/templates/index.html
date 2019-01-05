@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+
+<div class="mainBar">
+    <a th:href="@{showAll}" th:text="show" class="bar"></a>
+    <a class="bar" th:href="@{moreExpThan1000}">show products more expensive than 1000</a>
+    <a class="bar" th:href="@{moreThan2000}">show products more expensive than 2000</a>
+    <a class="bar" th:href="@{last10}">show last 10 products</a>
+    <a class="bar" th:href="@{orderedByName}">show all ordered by name</a>
+</div>
+
+
+<div class="mainList">
+    <div class="divList" th:each="product : ${products}">[['product id -' + ${product.id}]] <br/>
+        [['product name - ' + ${product.name}]]  <br/> [['product description - ' + ${product.description}]]  <br/>
+        [['product price - ' + ${product.price}]]</div>
+</div>
+
+<a th:href="@{saved}" th:text="save"></a>
+</body>
+</html>
